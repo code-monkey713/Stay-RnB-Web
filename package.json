@@ -1,0 +1,30 @@
+{
+  "name": "MongoModels",
+  "version": "1.0.0",
+  "description": "A repo to test out Mongo CRUD operations w/ Mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeder/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joeseff6/MongoModels.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joeseff6/MongoModels/issues"
+  },
+  "homepage": "https://github.com/Joeseff6/MongoModels#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
+  }
+}
