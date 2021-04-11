@@ -14,6 +14,14 @@ const UserSchema = new Schema({
         required: [true, `Please enter a valid password`],
         minlength: [8, `Password must be at least 8 characters.`],
     },
+    firstName: {
+        type: String,
+        trim: true,
+    },
+    lastName: {
+        type: String,
+        trim: true,
+    },
     email: {
         type: String,
         unique: [true, `This email is already taken`],
@@ -32,6 +40,12 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false,
     },
+    owner: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Owner",
+        },
+    ],
 });
 
 const User = mongoose.model(`User`,UserSchema);
