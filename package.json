@@ -10,6 +10,7 @@
     "seed": "node seeder/seeds.js"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "express": "^4.17.1",
