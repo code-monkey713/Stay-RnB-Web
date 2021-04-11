@@ -1,4 +1,4 @@
 module.exports = {
     User: require(`./User`),
-    // Listings: require(`./Listings`)
+    Owner: require(`./Owner`)
 };
