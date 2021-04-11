@@ -36,6 +36,16 @@ const UserSeed = [
         isOwner: true,
         owner: 1,
     },
+    {
+        username: `randy`,
+        firstName: `Random`,
+        lastName: `Guy`,
+        password: `password`,
+        email: `email@email4.com`,
+        userCreated: Date.now(),
+        isOwner: true,
+        owner: 2,
+    }
 ];
 
 const OwnerSeed = [
@@ -63,6 +73,22 @@ const OwnerSeed = [
         ],
         userId: 1,
     },
+    {
+        numberOfListings: 1,
+        listings: [
+            {
+                name: `My crib`,
+                type: `Full apartment`,
+                zip: 77002,
+                rooms: 2,
+                bathrooms: 1,
+                pets: `No`,
+                smoking: `Yes`,
+            },
+
+        ],
+        userId: 2,
+    }
 ];
 
 
