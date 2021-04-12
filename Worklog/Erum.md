@@ -1,10 +1,19 @@
 ## Erum's Worklog and #TODO:
 
+## Monday April 12
 
+TODO:
+-seperate out files for each tab page (organize code). Watch Youtube videp to help me
+-Synch login/signup buttons
+-Create profile page
+- create rent page
 
+  \*\*\*Stretch Goal( help back end):
+- after owner logs in
 
 ## Sunday April 11
-Copies files from personal repo to project repo. 
+
+Copies files from personal repo to project repo.
 
 Getting WARNING: #TODO: FIX WARNING!!!
 "Compiled with warnings.
@@ -12,21 +21,22 @@ Getting WARNING: #TODO: FIX WARNING!!!
 Attempted import error: 'shouldUseActivityState' is not exported from 'react-native-screens'.
 "
 STEPS TO INSTALL?: (.Getting error when moving files )
+
 1. clone repo
 2. npm install
-2. expo init --y
-2. expo init Stay RnB
-3. npm start OR expo start
+3. expo init --y
+4. expo init Stay RnB
+5. npm start OR expo start
 
+## Saturday April 10
 
-
-## Saturday April 10 
 Made the Sign in page
 
-## Friday April 09 
+## Friday April 09
+
 Re-did the home page
 Made the nav bar icons
-Made the Log in 
+Made the Log in
 
 ## Thursday April 8th
 
