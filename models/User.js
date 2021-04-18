@@ -13,6 +13,7 @@ const UserSchema = new Schema({
         trim: true,
         required: [true, `Please enter a valid password`],
         minlength: [8, `Password must be at least 8 characters.`],
+        select: false,
     },
     firstName: {
         type: String,
