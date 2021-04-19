@@ -53,7 +53,7 @@ app.post(`/api/listings`, async ({body},res) => {
 // Get user with listings
 app.get(`/api/users`, async (req,res) => {
     try {
-        const getUser = await db.User.findOne({_id: "607cbf4c6bad9c6e08e1a0a9"}).populate(`listings`);
+        const getUser = await db.User.findOne({_id: req.session.userId}).populate(`listings`);
         console.log(getUser)
         res.status(200).json(getUser);
     } catch(err) {
