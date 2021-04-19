@@ -4,6 +4,7 @@ const mongoose = require(`mongoose`);
 const path = require(`path`);
 const bcrypt = require(`bcrypt`);
 const PORT = 3001;
+const routes = require(`./controllers`);
 
 const db = require(`./models`);
 
@@ -22,6 +23,7 @@ app.use(logger(`dev`));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`public`));
+app.use(routes);
 
 mongoose.connect(`mongodb://localhost/Stay_RnB`, { useNewUrlParser: true });
 
