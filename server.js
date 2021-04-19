@@ -30,7 +30,6 @@ app.post(`/api/users`, async (req, res) => {
     try {
         req.body.password = await bcrypt.hash(req.body.password, 10);
         const newUser = await db.User.create(req.body);
-        console.log(newUser)
         req.session.userId = newUser._id
         res.status(200).json(newUser);
     } catch (err) {
@@ -40,9 +39,10 @@ app.post(`/api/users`, async (req, res) => {
 });
 
 // Create new listing
-app.post(`/api/listings`, async ({ body }, res) => {
+app.post(`/api/listings`, async (req, res) => {
     try {
-        const newListing = await db.Owner.create(body);
+        const newListing = await db.Owner.create(req.body);
+        await db.User.findOneAndUpdate({_id: req.session.userId}, { $push: { listings: newListing._id } }, { new: true })
         res.status(200).json(newListing);
     } catch (err) {
         console.log(err);
@@ -54,7 +54,6 @@ app.post(`/api/listings`, async ({ body }, res) => {
 app.get(`/api/users`, async (req, res) => {
     try {
         const getUser = await db.User.findOne({ _id: req.session.userId }).populate(`listings`);
-        console.log(getUser)
         res.status(200).json(getUser);
     } catch (err) {
         console.log(err);
@@ -65,8 +64,7 @@ app.get(`/api/users`, async (req, res) => {
 // Logging in
 app.post('/api/login', async (req, res) => {
     try {
-        const userData = await db.User.findOne({email: req.body.email}).select(`password email username`);
-        console.log(userData)
+        const userData = await db.User.findOne({ email: req.body.email }).select(`password email username`);
         if (!userData) {
             res
                 .status(400)
@@ -84,15 +82,23 @@ app.post('/api/login', async (req, res) => {
                 });
                 console.log(`successful login!`)
             } else {
-                res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
-            return;
+                res.status(400).json({ message: 'Incorrect email or password, please try again' });
+                return;
             }
         })
-
     } catch (err) {
         res.status(400).json(err);
+    };
+});
+
+// Logging out
+app.post('/api/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
     };
 });
 
