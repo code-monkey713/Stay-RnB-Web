@@ -41,7 +41,7 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false,
     },
-    owner: [
+    listings: [
         {
             type: Schema.Types.ObjectId,
             ref: "Owner",
