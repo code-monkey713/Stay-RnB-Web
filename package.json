@@ -1,20 +1,33 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "stay-rnb-backend",
+  "version": "1.0.0",
+  "description": "A repo to contain backend code for the Stay-RnB application",
+  "main": "server.js",
   "scripts": {
     "watch": "nodemon server.js",
-    "seed": "node seeder/seeds.js"
+    "seed": "node seeder/seeds.js",
+    "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joeseff6/Stay-RnB-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joeseff6/Stay-RnB-Backend/issues"
+  },
+  "homepage": "https://github.com/Joeseff6/Stay-RnB-Backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.12.6",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
-  },
-  "private": true
+    "nodemon": "^2.0.7"
+  }
 }
