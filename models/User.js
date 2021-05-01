@@ -44,7 +44,7 @@ const UserSchema = new Schema({
     listings: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Owner",
+            ref: "Listings",
         },
     ],
 });
