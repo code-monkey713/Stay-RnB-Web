@@ -4,7 +4,8 @@
   "description": "A repo to contain backend code for the Stay-RnB application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js",
+    "seed": "node seeder/seeds.js",
     "start": "node server.js"
   },
   "repository": {
@@ -20,7 +21,6 @@
   "homepage": "https://github.com/Joeseff6/Stay-RnB-Backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.12.6",
