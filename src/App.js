@@ -1,7 +1,10 @@
 import './App.css';
+import { Main } from './layout/Main';
 
 const App = () => {
-  return <h1>Stay RnB</h1>;
+  return (
+    <Main />
+  );
 };
 
 export default App;
