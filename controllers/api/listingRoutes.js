@@ -18,7 +18,8 @@ router.post(`/`, async (req, res) => {
 router.delete('/:id', async (req,res) => {
   try{
     const id = req.params.id;
-    db.Listings.deleteOne({_id: id});
+    const deletedListing = await db.Listings.deleteOne({_id: id});
+    res.status(200).json(deletedListing);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
