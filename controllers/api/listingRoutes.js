@@ -14,4 +14,15 @@ router.post(`/`, async (req, res) => {
   }
 });
 
+//Delete a listing
+router.delete('/:id', async (req,res) => {
+  try{
+    const id = req.params.id;
+    db.Listings.deleteOne({_id: id});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;
