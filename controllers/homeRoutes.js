@@ -3,12 +3,12 @@ const db = require(`../models`);
 const loggedIn = require(`../utils/auth/loggedIn`);
 const loggedOut = require(`../utils/auth/loggedOut`);
 
-// router.get(`/`,loggedIn, (req,res) => {
-//   res.send(`hello`)
-// })
+router.get(`/`,loggedIn, (req,res) => {
+  res.send(`Welcome to the Stay-RnB server, used for storing Stay-RnB data.`)
+})
 
 // Get user
-router.get(`/`, async (req, res) => {
+router.get(`/users`, async (req, res) => {
   try {
     const getUser = await db.User.find({})
     res.status(200).json(getUser);
