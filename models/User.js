@@ -33,13 +33,12 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now(),
     },
-    isRenter: {
-        type: Boolean,
-        default: false,
-    },
     isOwner: {
         type: Boolean,
         default: false,
+    },
+    zip: {
+      type: Number
     },
     listings: [
         {

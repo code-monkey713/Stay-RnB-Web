@@ -14,7 +14,6 @@ const UserSeed = [
     password: "password",
     email: "email@email.com",
     userCreated: Date.now(),
-    isRenter: false,
     isOwner: false,
   },
   {
@@ -24,7 +23,6 @@ const UserSeed = [
     password: "password",
     email: "email@email2.com",
     userCreated: Date.now(),
-    isRenter: true,
   },
   {
     username: "barfoo",
@@ -71,34 +69,37 @@ const ReviewSeed = [
   }
 ]
 
-function seedUsers() {
-  db.User.deleteMany({})
-    .then(() => db.User.collection.insertMany(UserSeed))
-    .then(console.log("User seed complete!"))
-    .catch(err => {
-      console.log(err);
-      process.exit(1);
-    });
+async function seedUsers() {
+  try {
+    await db.User.deleteMany({});
+    await db.User.collection.insertMany(UserSeed);
+    console.log("Users successfully seeded!");
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
 
-function seedListings() {
-  db.Listings.deleteMany({})
-    .then(() => db.Listings.collection.insertMany(ListingSeed))
-    .then(console.log("Listing seed complete!"))
-    .catch(err => {
-      console.log(err);
-      process.exit(1);
-    });
+async function seedListings() {
+  try {
+    await db.Listings.deleteMany({});
+    await db.Listings.collection.insertMany(ListingSeed)
+    console.log("Listing seed complete!")
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
 
-function seedReviews() {
-  db.Reviews.deleteMany({})
-    .then(() => db.Reviews.collection.insertMany(ReviewSeed))
-    .then(console.log("Reviews seed complete!"))
-    .catch(err => {
-      console.log(err);
-      process.exit(1);
-    });
+async function seedReviews() {
+  try {
+    await db.Reviews.deleteMany({});
+    await db.Reviews.collection.insertMany(ReviewSeed);
+    console.log("Reviews seed complete!")
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
 
 async function seedAll() {
@@ -106,6 +107,7 @@ async function seedAll() {
   await seedListings();
   await seedReviews();
 
+  console.log("Seeds complete, exiting process...")
   process.exit(0);
 }
 
