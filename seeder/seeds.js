@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/merngooglebooks", {
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`, {
     useNewUrlParser: true,
     useFindAndModify: false
 });
