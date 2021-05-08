@@ -1,7 +1,7 @@
 const mongoose = require(`mongoose`);
 const {Schema} = mongoose;
 
-const OwnerSchema = new Schema({
+const HostSchema = new Schema({
     numberOfListings: {
         type: Number,
     },
@@ -14,6 +14,6 @@ const OwnerSchema = new Schema({
     },
 });
 
-const Owner = mongoose.model(`Owner`,OwnerSchema);
+const Host = mongoose.model(`Host`,HostSchema);
 
-module.exports = Owner;
+module.exports = Host;
