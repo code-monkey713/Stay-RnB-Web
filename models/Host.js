@@ -5,9 +5,12 @@ const HostSchema = new Schema({
     numberOfListings: {
         type: Number,
     },
-    listings: {
-        type: Array,
-    },
+    listings: [
+      {
+          type: Schema.Types.ObjectId,
+          ref: "Listings",
+      },
+  ],
     userId: {
         type: Schema.Types.ObjectId,
         ref: "User",

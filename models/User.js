@@ -33,19 +33,9 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now(),
     },
-    isOwner: {
-        type: Boolean,
-        default: false,
-    },
     zip: {
       type: Number
     },
-    listings: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Listings",
-        },
-    ],
 });
 
 const User = mongoose.model(`User`,UserSchema);
