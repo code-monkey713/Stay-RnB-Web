@@ -15,6 +15,7 @@ Erum Dhukka - Mobile application development
   - Email: erumdhukka531@gmail.com
 
 Joseph Soria - Server-side development
+  - Deploy: https://stay-rnb-server.herokuapp.com/
   - GitHub: https://github.com/Joeseff6
   - Email: josephsoria6@gmail.com
 
