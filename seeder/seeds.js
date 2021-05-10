@@ -14,7 +14,7 @@ const UserSeed = [
     password: "password",
     email: "email@email.com",
     userCreated: Date.now(),
-    isOwner: false,
+    // isOwner: false,
   },
   {
     username: "foobar",
@@ -31,8 +31,8 @@ const UserSeed = [
     password: "password",
     email: "email@email3.com",
     userCreated: Date.now(),
-    isOwner: true,
-    owner: 1,
+    // isOwner: true,
+    // owner: 1,
   },
   {
     username: "randy",
@@ -41,8 +41,8 @@ const UserSeed = [
     password: "password",
     email: "email@email4.com",
     userCreated: Date.now(),
-    isOwner: true,
-    owner: 2,
+    // isOwner: true,
+    // owner: 2,
   }
 ];
 
@@ -61,6 +61,8 @@ const ListingSeed = [
     numberOfGuests: 4,
   }
 ];
+
+
 
 const ReviewSeed = [
   {
