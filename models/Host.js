@@ -2,20 +2,6 @@ const mongoose = require(`mongoose`);
 const { Schema } = mongoose;
 
 const HostSchema = new Schema({
-<<<<<<< HEAD
-    numberOfListings: {
-        type: Number,
-    },
-    listings: [
-      {
-          type: Schema.Types.ObjectId,
-          ref: "Listings",
-      },
-  ],
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-=======
   username: {
     type: String,
     trim: true,
@@ -54,7 +40,6 @@ const HostSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Listings',
->>>>>>> 2294b999fa5326b3ef9506eca7e5c239252f569d
     },
   ],
 });
