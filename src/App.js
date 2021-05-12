@@ -1,6 +1,6 @@
 import './App.css';
-import { Main } from './layout';
-import { Home, Listing, Login, Profile, Signup } from './pages';
+// import { Main } from './layout';
+import { Home, Listing, Login, Profile, Signup, RecoverPassword } from './pages';
 import { NavTabs, TitleBar } from './components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/recover" element={<RecoverPassword />} />
         </Routes>
       </div>
     </BrowserRouter>
