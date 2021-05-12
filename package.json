@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "stay-rnb",
   "version": "0.1.0",
   "private": true,
@@ -19,31 +18,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-=======
-  "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject",
-    "watch": "nodemon server.js",
-    "seed": "node seeder/seeds.js"
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "expo": "~40.0.0",
-    "expo-status-bar": "~1.0.3",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.3",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
-    "path": "^0.12.7",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
-    "react-native-web": "~0.13.12"
->>>>>>> e6f5b5d4f5632b9814647586d6ab46b98a5c7433
   },
   "eslintConfig": {
     "extends": [
