@@ -8,10 +8,10 @@ const app = express();
 
 const session = require('express-session');
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
 };
 app.use(session(sess));
 
@@ -21,8 +21,11 @@ app.use(express.json());
 app.use(express.static(`public`));
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 
 app.listen(PORT, () => {
-    console.log(`App is listening on ${PORT}.`)
+  console.log(`App is listening on ${PORT}.`);
 });

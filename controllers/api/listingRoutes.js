@@ -1,6 +1,17 @@
 const router = require(`express`).Router();
 const db = require(`../../models`);
 
+// Get all listings
+router.get('/', async (req, res) => {
+  try {
+    const getListing = await db.Listings.find({})
+    res.status(200).json(getListing);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 // Create new listing
 router.post(`/`, async (req, res) => {
   try {
