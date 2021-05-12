@@ -1,9 +1,20 @@
-import React from 'react';
+import React from "react";
 
 export const NavTabs = () => {
   return (
-    <div>
-      <h1>This will be the NavTabs on the bottom as the footer</h1>
+    <div className="footer row m-auto">
+        <div className="col tab">
+          <a href="#" className="tabLinks fs-2">Login</a>
+        </div>
+        <div className="col tab">
+          <a href="#" className="tabLinks fs-2">Sign Up</a>
+        </div>
+        <div className="col tab">
+          <a href="#" className="tabLinks fs-2">Listings</a>
+        </div>
+        <div className="col tab">
+          <a href="#" className="tabLinks fs-2">Profile</a>
+      </div>
     </div>
   );
 };
