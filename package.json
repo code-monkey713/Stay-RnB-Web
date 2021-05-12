@@ -2,6 +2,7 @@
   "name": "stay-rnb",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://localhost:3001/",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",

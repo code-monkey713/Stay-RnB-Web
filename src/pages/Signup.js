@@ -1,4 +1,6 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import API from '../utils/API';
 
 export const Signup = () => {
   const username = useRef('');
@@ -11,17 +13,15 @@ export const Signup = () => {
     event.preventDefault();
     console.log('add validation for data entered');
 
-    const addUserData = {
+    API.createUser({
       username: username.current.value,
+      password: password.current.value,
       firstName: firstName.current.value,
       lastName: lastName.current.value,
-      emailAddress: emailAddress.current.value,
-      password: password.current.value,
-    };
-
-    console.log(addUserData);
-
-    console.log('add function to create new user from "addUserData" object');
+      email: emailAddress.current.value,
+    }).then(() => {
+      alert('The user has been created successfully!');
+    });
   };
 
   return (
