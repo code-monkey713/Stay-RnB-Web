@@ -20,6 +20,6 @@ Joseph Soria - Server-side development
   - Email: josephsoria6@gmail.com
 
 Tony Tran - Desktop/React application development/Project Manager
-  - GitHub: https://github.com/Joeseff6
-  - Email: josephsoria6@gmail.com
+  - GitHub: https://github.com/code-monkey713
+  - Email: tony.tran713@outlook.com
 
