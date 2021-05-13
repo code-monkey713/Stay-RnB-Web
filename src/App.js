@@ -7,9 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <div className="container-fluid">
         <TitleBar />
-        <NavTabs />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/listing" element={<Listing />} />
@@ -19,6 +18,7 @@ const App = () => {
           <Route path="/recover" element={<RecoverPassword />} />
         </Routes>
       </div>
+      <NavTabs />
     </BrowserRouter>
   );
 };
