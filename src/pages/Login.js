@@ -36,15 +36,15 @@ export const Login = () => {
               value=""
               id="rememberCheck"
             />
-            <label
-              htmlFor="rememberCheck"
-              className="fs-6"
-            >
+            <label htmlFor="rememberCheck" className="fs-6">
               Remember me
             </label>
           </div>
-          <div className="col form-check d-flex justify-content-center">
-            <p className="forgot-password text-right fs-6">
+        </div>
+        
+        <div className="row">
+        <div className="col form-check d-flex justify-content-center">
+            <p className="forgot-password fs-6">
               Forgot <a href="#">password?</a>
             </p>
           </div>
