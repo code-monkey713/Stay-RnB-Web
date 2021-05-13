@@ -48,8 +48,8 @@ code {
   padding-top: 12px;
 }
 
-.tabList,
-h2 {
+.tabList, h2 {
+  color: #284b63;
   font-family: "Abril Fatface", cursive;
   list-style: none;
 }
