@@ -18,7 +18,6 @@ const App = () => {
         </Routes>
       </div>
       <NavTabs />
-
     </BrowserRouter>
   );
 };
