@@ -3,12 +3,15 @@ Application for booking room and boarding when you don't need a full apartment o
 
 We will have the web portal for users on their desktop or mobile app if they are on their mobile phones. Stay tuned for more information! 
 
+Web Deployment: https://stay-rnb.herokuapp.com/
+
 # Mobile-App Version
-https://github.com/erumd/Stay-RnB-Mobile
+Repo: https://github.com/erumd/Stay-RnB-Mobile
+Deployment: To be deployed to the Play Store on Android & Apple Store on iOS
 
 # Server-Side
-https://github.com/Joeseff6/Stay-RnB-Backend
-
+Repo: https://github.com/Joeseff6/Stay-RnB-Backend
+Deployment: https://stay-rnb-server.herokuapp.com/
 # Team members
 Erum Dhukka - Mobile application development
   - GitHub: https://github.com/erumd
@@ -20,6 +23,6 @@ Joseph Soria - Server-side development
   - Email: josephsoria6@gmail.com
 
 Tony Tran - Desktop/React application development/Project Manager
-  - GitHub: https://github.com/Joeseff6
-  - Email: josephsoria6@gmail.com
+  - GitHub: https://github.com/code-monkey713
+  - Email: tony.tran713@outlook.com
 
