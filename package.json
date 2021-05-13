@@ -14,9 +14,9 @@
     "react-scripts": "4.0.3"
   },
   "engines": {
-    "node": "15.6.0",
+    "node": "16.1.0",
     "npm": "7.8.0"
-},
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
