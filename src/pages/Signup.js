@@ -101,13 +101,12 @@ export const Signup = () => {
           </div>
         </div>
 
-        <div className="row mb-3">
-          <div className="col d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary btn-block">
-              Sign Up
-            </button>
-          </div>
-        </div>
+        <button type="submit" className="btn btn-primary btn-block">
+          Sign Up
+        </button>
+        <p className="forgot-password text-right">
+          Already registered <Link to='/login'>sign in?</Link>
+        </p>
       </form>
       <div className="row">
           <div className="col d-flex justify-content-center">
