@@ -65,3 +65,12 @@ code {
 .form-control {
   border-radius: 20px;
 }
+
+img {
+  
+}
+
+.carouselContainer {
+  max-width: 800px;
+  margin: auto;
+}
