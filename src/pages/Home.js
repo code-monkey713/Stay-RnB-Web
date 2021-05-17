@@ -9,7 +9,7 @@ export const Home = () => {
           Welcome to Stay RnB! Please choose an option below to find
           your next room and board.
         </h2>
-        <Carousel fade>
+        <Carousel fade controls={false} className="carouselContainer">
           <Carousel.Item>
             <img 
             className="d-block w-100 h-100"
