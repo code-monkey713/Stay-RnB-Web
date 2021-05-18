@@ -1,7 +1,7 @@
 * {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Varela Round", sans-serif;
   color: #284b63;
-  font-family: "Abril Fatface", cursive;
+  font-weight: bold;
 }
 
 body {
@@ -29,11 +29,13 @@ code {
 .title {
   font-family: "Fugaz One", cursive;
   color: #153243;
-  font-size: 6em;
+  font-size: 4em;
   text-shadow: 5px 5px #6196bd;
+  position: fixed;
+  top: 0;
 }
 
-.footer {
+.navTabs {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -47,6 +49,7 @@ code {
     rgba(96, 195, 215, 0.7903536414565826) 50%,
     rgba(250, 252, 245, 1) 100%
   );
+  z-index: 1;
 }
 
 .tab {
@@ -64,5 +67,35 @@ code {
 }
 
 .form-control {
+  border-radius: 20px;
+}
+
+.userImage {
+  padding: 3px;
+  width: 300px;
+  max-height: 300px;
+  border-radius: 300px;
+  background-color: white;
+}
+
+.carouselContainer {
+}
+
+.profileContainer {
+}
+
+.layoutContainer {
+  margin-top: 100px;
+}
+
+.titleContainer {
+}
+
+.cardContainer {
+  background-color: white;
+  border: grey 2px solid;
+}
+
+.search {
   border-radius: 20px;
 }

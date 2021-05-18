@@ -1,6 +1,5 @@
-
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   return (
@@ -38,21 +37,13 @@ export const Login = () => {
               value=""
               id="rememberCheck"
             />
-            <label htmlFor="rememberCheck" className="fs-6">
+            <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
               Remember me
             </label>
           </div>
         </div>
-        
-        <div className="row">
-        <div className="col form-check d-flex justify-content-center">
-            <p className="forgot-password fs-6">
-              Forgot <a href="#">password?</a>
-            </p>
-          </div>
-        </div>
 
-        <div className="row">
+        <div className="row mb-3">
           <div className="col d-flex justify-content-center">
             <button type="submit" className="btn btn-primary btn-block">
               Submit
@@ -60,6 +51,21 @@ export const Login = () => {
           </div>
         </div>
       </form>
+
+      <div className="row">
+        <div className="col d-flex justify-content-center">
+          <p className="forgot-password fs-5">
+            Forgot <Link to="/recover"> password?</Link>
+          </p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col d-flex justify-content-center">
+          <p className="forgot-password fs-5">
+            Not a user yet? Sign up <Link to="/signup">here.</Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
