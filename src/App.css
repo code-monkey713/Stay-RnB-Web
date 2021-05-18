@@ -1,6 +1,7 @@
 * {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Varela Round", sans-serif;
   color: #284b63;
+  font-weight: bold;
 }
 
 body {
@@ -92,5 +93,5 @@ code {
 
 .cardContainer {
   background-color: white;
-  border: grey 2px solid
+  border: grey 2px solid;
 }
