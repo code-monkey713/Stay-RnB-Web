@@ -1,6 +1,5 @@
-
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
   return (
@@ -43,16 +42,10 @@ export const Login = () => {
             </label>
           </div>
         </div>
-        
-        <div className="row">
-        <div className="col form-check d-flex justify-content-center">
-            <p className="forgot-password fs-6">
-              Forgot <a href="#">password?</a>
-            </p>
-          </div>
-        </div>
 
-        <div className="row">
+
+
+        <div className="row mb-3">
           <div className="col d-flex justify-content-center">
             <button type="submit" className="btn btn-primary btn-block">
               Submit
@@ -60,6 +53,20 @@ export const Login = () => {
           </div>
         </div>
       </form>
+      <div className="row">
+          <div className="col form-check d-flex justify-content-center">
+            <p className="forgot-password fs-6">
+              Forgot <a href="#">password?</a>
+            </p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col form-check d-flex justify-content-center">
+            <p className="forgot-password fs-6">
+              Not a user yet? <Link to="/signup">Sign up!</Link>
+            </p>
+          </div>
+        </div>
     </div>
   );
 };
