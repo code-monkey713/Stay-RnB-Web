@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const ListingCard = () => {
+export const ListingCard = (props) => {
   const [classes, setClasses] = useState("row mb-3 display d-none");
 
   const ToggleDisplay = () => {
