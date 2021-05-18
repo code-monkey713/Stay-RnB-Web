@@ -1,6 +1,6 @@
 import React from 'react';
-import HostProfile from '../components/Profiles/HostProfile';
-import UserProfile from '../components/Profiles/UserProfile';
+import { HostProfile } from '../components/Profiles/';
+import { UserProfile } from '../components/Profiles/';
 
 
 export const Profile = () => {
