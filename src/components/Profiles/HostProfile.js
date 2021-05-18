@@ -1,6 +1,6 @@
 import React from "react";
 import Man from "../../assets/Man.jpg";
-import { ListingCard } from "../../components";
+import { HostListingCard } from "../../components/ListingCards/HostListingCard";
 
 export const HostProfile = () => {
   return (
@@ -23,9 +23,9 @@ export const HostProfile = () => {
       <h3 className="text-center mt-5 mb-3">My Listings</h3>
 
       <div className="row d-flex justify-content-center">
-          <ListingCard />
-          <ListingCard />
-          <ListingCard />
+          <HostListingCard />
+          <HostListingCard />
+          <HostListingCard />
 
       </div>
     </>
