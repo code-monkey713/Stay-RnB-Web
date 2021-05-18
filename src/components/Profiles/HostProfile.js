@@ -1,6 +1,6 @@
 import React from "react";
 import Man from "../../assets/Man.jpg";
-import { ListingCard } from '../../components';
+import { ListingCard } from "../../components";
 
 export const HostProfile = () => {
   return (
@@ -22,7 +22,12 @@ export const HostProfile = () => {
 
       <h3 className="text-center mt-5 mb-3">My Listings</h3>
 
-      <ListingCard />
+      <div className="row d-flex justify-content-center">
+          <ListingCard />
+          <ListingCard />
+          <ListingCard />
+
+      </div>
     </>
   );
 };
