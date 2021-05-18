@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {Link} from 'react-router-dom';
 
@@ -5,47 +6,60 @@ export const Login = () => {
   return (
     <div>
       <form>
-        <h3>Sign In</h3>
+        <h2 className="text-center mt-5 mb-3">Already a user? Sign In!</h2>
 
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-          />
+        <div className="form-group row mb-3">
+          <div className="col-6 m-auto">
+            <label className="fs-4">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-          />
+        <div className="form-group row mb-3">
+          <div className="col-6 m-auto">
+            <label className="fs-4">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <div className="custom-control custom-checkbox">
+        <div className="row">
+          <div className="col form-check d-flex justify-content-center">
             <input
               type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
+              className="form-check-input"
+              value=""
+              id="rememberCheck"
             />
-            <label className="custom-control-label" htmlFor="customCheck1">
+            <label htmlFor="rememberCheck" className="fs-6">
               Remember me
             </label>
           </div>
         </div>
+        
+        <div className="row">
+        <div className="col form-check d-flex justify-content-center">
+            <p className="forgot-password fs-6">
+              Forgot <a href="#">password?</a>
+            </p>
+          </div>
+        </div>
 
-        <button type="submit" className="btn btn-primary btn-block">
-          Submit
-        </button>
-        <p className="forgot-password text-right">
-          Forgot <Link to='/recover'>password?</Link>
-        </p>
+        <div className="row">
+          <div className="col d-flex justify-content-center">
+            <button type="submit" className="btn btn-primary btn-block">
+              Submit
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
 };
-
