@@ -95,3 +95,7 @@ code {
   background-color: white;
   border: grey 2px solid;
 }
+
+.search {
+  border-radius: 20px;
+}
