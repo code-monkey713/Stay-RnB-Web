@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 export const HostListingCard = (props) => {
   const [classes, setClasses] = useState(
-    "row mb-3 cardContainer d-flex justify-content-center"
+    "row mb-3 d-flex justify-content-center d-none"
   );
 
   const ToggleDisplay = () => {
-    if (classes === "row mb-3 cardContainer d-none") {
-      setClasses("row mb-3 cardContainer");
+    if (classes === "row mb-3 d-flex justify-content-center d-none") {
+      setClasses("row mb-3 d-flex justify-content-center");
     } else {
-      setClasses("row mb-3 cardContainer d-none");
+      setClasses("row mb-3 d-flex justify-content-center d-none");
     }
   };
 
@@ -23,7 +23,7 @@ export const HostListingCard = (props) => {
         </div>
       </div>
       <div className={classes}>
-        <div className="col-6">
+        <div className="col-6 cardContainer">
           <div className="row">
             <div className="col mt-3">
               <img
