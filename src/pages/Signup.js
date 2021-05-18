@@ -112,7 +112,7 @@ export const Signup = () => {
 
       <div className="row">
         <div className="col d-flex justify-content-center">
-          <p className="forgot-password">
+          <p className="forgot-password fs-5">
             Already registered? Sign in<Link to="/login"> here.</Link>
           </p>
         </div>
