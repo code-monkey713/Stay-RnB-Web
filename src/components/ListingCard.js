@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
 
 export const ListingCard = () => {
   return (
-    <div>
-      <div className="card">This is a card!</div>
-    </div>
+    <>
+      <div className="row">
+        <div className="col-4 d-flex justify-content-center listingContainer">
+          <button className="btn-primary">Listing 1</button>
+
+
+        </div>
+      </div>
+    </>
   );
 };
