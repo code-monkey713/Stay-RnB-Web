@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Login = () => {
+  const [host,setHost] = useState(false);
+
   return (
     <div>
       <form>
@@ -39,6 +41,20 @@ export const Login = () => {
             />
             <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
               Remember me
+            </label>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col form-check d-flex justify-content-center">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="hostLogin"
+              onClick={() => !host ? setHost(true) : setHost(false)}
+            />
+            <label htmlFor="hostLogin" className="mx-2 mb-2 fs-6">
+              Host Login
             </label>
           </div>
         </div>

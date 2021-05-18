@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
@@ -8,6 +8,7 @@ export const Signup = () => {
   const lastName = useRef("");
   const emailAddress = useRef("");
   const password = useRef("");
+  const [host,setHost] = useState(false);
 
   const submitFormHandler = (event) => {
     event.preventDefault();
@@ -98,6 +99,20 @@ export const Signup = () => {
                 ref={password}
               />
             </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col form-check d-flex justify-content-center">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="hostSignUp"
+              onClick={() => !host ? setHost(true) : setHost(false)}
+            />
+            <label htmlFor="hostSignUp" className="mx-2 mb-2 fs-6">
+              Host Signup
+            </label>
           </div>
         </div>
 
