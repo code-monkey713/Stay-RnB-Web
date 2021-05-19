@@ -2,6 +2,11 @@ const mongoose = require(`mongoose`);
 const {Schema} = mongoose;
 
 const ListingsSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, `Please enter a name.`],
+    trim: true,
+  },
   zip: {
     type: String,
     required: [true, `Please enter a valid zip code.`],
@@ -34,6 +39,9 @@ const ListingsSchema = new Schema({
   },
   bedrooms: {
     type: Number,
+  },
+  beds: {
+
   },
   bathrooms: {
     type: Number
