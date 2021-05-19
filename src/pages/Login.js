@@ -7,8 +7,8 @@ export const Login = () => {
   return (
     <div>
       <form>
-        <h2 className="text-center mt-5 mb-3">Already have an account? Sign In!</h2>
-        <h3 className="text-center mb-3">Sign in as a User to see and book listings</h3>
+        <h2 className="text-center mt-5 mb-1">Already have an account? Sign In!</h2>
+        <h3 className="text-center mb-1">Sign in as a User to see and book listings</h3>
         <h3 className="text-center mb-3">Sign in as a Host to make and host listings</h3>
 
 
