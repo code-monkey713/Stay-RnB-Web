@@ -26,18 +26,9 @@ const API = {
     return axios.post(`${localAPIServer}/api/users/login`, {data: userData});
   },
 
-<<<<<<< HEAD
   logout: () => {
     return axios.post(`${localAPIServer}/api/users/logout`);
   }
-=======
-  // login for users
-  userLogin: (userInfo) => {
-    return axios.post('/api/users/login', userInfo);
-  },
-
-
->>>>>>> bdb253d5206207ff32b034e2528083d0fd234562
 };
 
 export default API;
