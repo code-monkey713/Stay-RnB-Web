@@ -1,16 +1,38 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 export const Login = () => {
-  const [host,setHost] = useState(false);
+  const [host, setHost] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const userData = {
+        email: email,
+        password: password
+      };
+      const response = await API.login(userData);
+      console.log(response)
+    } catch(err) {
+      console.log(err)
+    }
+  };
 
   return (
     <div>
       <form>
-        <h2 className="text-center mt-5 mb-1">Already have an account? Sign In!</h2>
-        <h3 className="text-center mb-1">Sign in as a User to see and book listings</h3>
-        <h3 className="text-center mb-3">Sign in as a Host to make and host listings</h3>
-
+        <h2 className="text-center mt-5 mb-1">
+          Already have an account? Sign In!
+        </h2>
+        <h3 className="text-center mb-1">
+          Sign in as a User to see and book listings
+        </h3>
+        <h3 className="text-center mb-3">
+          Sign in as a Host to make and host listings
+        </h3>
 
         <div className="form-group row mb-3">
           <div className="col-6 m-auto">
@@ -19,6 +41,7 @@ export const Login = () => {
               type="email"
               className="form-control"
               placeholder="Enter email"
+              onChange={({ target }) => setEmail(target.value)}
             />
           </div>
         </div>
@@ -30,6 +53,7 @@ export const Login = () => {
               type="password"
               className="form-control"
               placeholder="Enter password"
+              onChange={({ target }) => setPassword(target.value)}
             />
           </div>
         </div>
@@ -54,7 +78,7 @@ export const Login = () => {
               type="checkbox"
               className="form-check-input"
               id="hostLogin"
-              onClick={() => !host ? setHost(true) : setHost(false)}
+              onClick={() => (!host ? setHost(true) : setHost(false))}
             />
             <label htmlFor="hostLogin" className="mx-2 mb-2 fs-6">
               Host Login
@@ -64,7 +88,11 @@ export const Login = () => {
 
         <div className="row mb-3">
           <div className="col d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary btn-block">
+            <button
+              type="submit"
+              className="btn btn-primary btn-block"
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>
