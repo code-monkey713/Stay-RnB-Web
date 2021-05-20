@@ -15,7 +15,6 @@ const sess = {
   saveUninitialized: true,
 };
 
-app.options("*", cors());
 app.use(cors());
 app.use(session(sess));
 app.use(logger(`dev`));
