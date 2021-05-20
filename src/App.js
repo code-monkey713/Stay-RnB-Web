@@ -7,10 +7,18 @@ import {
   Profile,
   Signup,
   RecoverPassword,
+<<<<<<< HEAD
+  AddListing,
+} from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Welcome, Main } from "./layout";
+import { TitleBar } from "./components";
+=======
 } from './pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Welcome, Main } from './layout';
 import { TitleBar } from './components';
+>>>>>>> bdb253d5206207ff32b034e2528083d0fd234562
 
 const App = () => {
   return (
@@ -25,6 +33,7 @@ const App = () => {
           </Route>
           <Route element={<Main />}>
             <Route path="/listing" element={<Listing />} />
+            <Route path="/addlisting" element={<AddListing />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/recover" element={<RecoverPassword />} />
           </Route>

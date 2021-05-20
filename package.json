@@ -4,6 +4,9 @@
   "private": true,
   "proxy": "https://localhost:3001",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "history": "^5.0.0",
@@ -15,8 +18,8 @@
     "react-scripts": "4.0.3"
   },
   "engines": {
-    "node": "14.17.0",
-    "npm": "7.13.0"
+    "node": "15.6.0",
+    "npm": "7.8.0"
   },
   "scripts": {
     "start": "react-dotenv && react-scripts start",
