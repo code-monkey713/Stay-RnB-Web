@@ -1,5 +1,9 @@
 * {
+<<<<<<< HEAD
   font-family: "Varela Round", sans-serif;
+=======
+  font-family: 'Abril Fatface', cursive;
+>>>>>>> bdb253d5206207ff32b034e2528083d0fd234562
   color: #284b63;
   font-weight: bold;
 }
@@ -7,8 +11,8 @@
 body {
   margin: 0;
   padding: 2px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,12 +26,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 .title {
-  font-family: "Fugaz One", cursive;
+  font-family: 'Fugaz One', cursive;
   color: #153243;
   font-size: 4em;
   text-shadow: 5px 5px #6196bd;

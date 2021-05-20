@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css';
 // import { Main } from './layout';
 import {
   Home,
@@ -7,11 +7,18 @@ import {
   Profile,
   Signup,
   RecoverPassword,
+<<<<<<< HEAD
   AddListing,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Welcome, Main } from "./layout";
 import { TitleBar } from "./components";
+=======
+} from './pages';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Welcome, Main } from './layout';
+import { TitleBar } from './components';
+>>>>>>> bdb253d5206207ff32b034e2528083d0fd234562
 
 const App = () => {
   return (
