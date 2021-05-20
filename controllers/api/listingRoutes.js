@@ -24,6 +24,7 @@ router.post(`/`, cors(), async (req, res) => {
     // console.log("Last step")
     // res.status(200).json(newListing);
     console.log("Heroku works!");
+    console.log("Another one");
     res.status(200);
   } catch (err) {
     console.log(err);
