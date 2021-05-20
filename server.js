@@ -23,7 +23,6 @@ app.use(express.json());
 app.use(express.static(`public`));
 app.use(routes);
 
-
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
