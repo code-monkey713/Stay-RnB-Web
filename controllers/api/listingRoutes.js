@@ -16,6 +16,7 @@ router.get("/", cors(), async (req, res) => {
 
 // Create new listing
 router.post(`/`, cors(), async (req, res) => {
+  console.log(req);
   try {
     // console.log("First step")
     // req.body.user = req.session.userId;
@@ -25,11 +26,13 @@ router.post(`/`, cors(), async (req, res) => {
     // res.status(200).json(newListing);
     console.log("Heroku works!");
     console.log("Another one");
-    res.status(200);
+    return res.status(200).send("Hello World");
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
+  return res.status(200).send("Hello there");
+
 });
 
 //Delete a listing
