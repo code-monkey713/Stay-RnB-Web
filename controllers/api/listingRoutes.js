@@ -1,5 +1,6 @@
 const router = require(`express`).Router();
 const db = require(`../../models`);
+const cors = require('cors');
 
 // Get all listings
 router.get("/", async (req, res) => {
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // Create new listing
-router.post(`/`, async (req, res) => {
+router.post(`/`, cors(), async (req, res) => {
   try {
     // console.log("First step")
     // req.body.user = req.session.userId;
