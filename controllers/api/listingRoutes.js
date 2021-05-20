@@ -3,8 +3,9 @@ const db = require(`../../models`);
 const cors = require('cors');
 
 // Get all listings
-router.get("/", async (req, res) => {
+router.get("/", cors(), async (req, res) => {
   try {
+    console.log("Hey")
     const getListing = await db.Listings.find({});
     res.status(200).json(getListing);
   } catch (err) {
