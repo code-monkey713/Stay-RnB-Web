@@ -8,12 +8,10 @@ const ListingsSchema = new Schema({
     trim: true,
   },
   zip: {
-    type: String,
+    type: Number,
     required: [true, `Please enter a valid zip code.`],
     trim: true,
-    minLength: 5,
-    maxLength: 5,
-  },
+    },
   address: {
     type: String,
     required: [true, `Please enter a valid street address.`],
@@ -31,7 +29,8 @@ const ListingsSchema = new Schema({
     default: true,
   },
   type: {
-    type: String
+    type: String,
+    required: [true, `Please enter a valid state.`],
   },
   price: {
     type: Number,
@@ -39,21 +38,27 @@ const ListingsSchema = new Schema({
   },
   bedrooms: {
     type: Number,
+    required: [true, `Please select a number of bedrooms.`],
   },
   beds: {
-
+    type: Number,
+    required: [true, `Please select a number of beds.`],
   },
   bathrooms: {
-    type: Number
+    type: Number,
+    required: [true, `Please select a number of bathrooms.`],
   },
   pets: {
-    type: String
+    type: String,
+    default: "No",
   },
   smoking: {
-    type: String
+    type: String,
+    default: "No",
   },
   numberOfGuests: {
-    type: Number
+    type: Number,
+    required: [true, `Please select a number of guests.`],
   },
   datePosted: {
     type: Date,
