@@ -1,9 +1,14 @@
 import React from 'react';
+import { HostProfile } from '../components/Profiles/';
+import { UserProfile } from '../components/Profiles/';
+
 
 export const Profile = () => {
   return (
     <div>
-      <h1>Profile Page</h1>
+      <HostProfile />
+      {/* <UserProfile /> */}
+
     </div>
   );
 };
