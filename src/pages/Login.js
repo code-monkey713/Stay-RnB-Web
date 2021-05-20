@@ -14,8 +14,9 @@ export const Login = () => {
         email: email,
         password: password
       };
-      const response = await API.login(userData);
-      console.log(response)
+      await API.login(userData);
+      console.log("successful login!")
+      // !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
     } catch(err) {
       console.log(err)
     }
