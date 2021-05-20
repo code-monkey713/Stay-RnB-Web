@@ -42,7 +42,6 @@ export const Login = () => {
               type="email"
               id="email"
               required
-              ref={emailRef}
               className="form-control"
               placeholder="Enter email"
               onChange={({ target }) => setEmail(target.value)}
@@ -57,7 +56,6 @@ export const Login = () => {
               type="password"
               id="password"
               required
-              ref={passwordRef}
               className="form-control"
               placeholder="Enter password"
               onChange={({ target }) => setPassword(target.value)}
