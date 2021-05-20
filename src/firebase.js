@@ -1,22 +1,15 @@
-import firebase from 'firebase';
+import firebase from "firebase/app"
+import "firebase/auth"
 
-// firebase application connection
+const app = firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+})
 
-const config = {
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  apiKey: 'AIzaSyB3b3oSa-zGadWW49Isi23G_9RYUmSkeMY',
-  authDomain: 'stay-rnb-456de.firebaseapp.com',
-  databaseURL: 'https://stay-rnb-456de-default-rtdb.firebaseio.com',
-  projectId: 'stay-rnb-456de',
-  storageBucket: 'stay-rnb-456de.appspot.com',
-  messagingSenderId: '466254791780',
-  appId: '1:466254791780:web:3c6f5b6ec46ab5771f8b71',
-  measurementId: 'G-NM6HMTLDV7',
-};
-
-firebase.initializeApp(config);
-
-export const provider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
-
-export default firebase;
+export const auth = app.auth()
+export default app
