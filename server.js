@@ -14,14 +14,14 @@ const sess = {
   resave: false,
   saveUninitialized: true,
 };
-app.use(session(sess));
 
+app.use(cors());
+app.use(session(sess));
 app.use(logger(`dev`));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`public`));
 app.use(routes);
-app.use(cors());
 
 
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`, {
