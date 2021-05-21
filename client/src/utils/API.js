@@ -1,15 +1,13 @@
 import axios from "axios";
-const herokuUri = "https://stay-rnb-server.herokuapp.com";
-const localAPIServer = "http://localhost:3001";
 
 const API = {
   // get all listings
   getListings: () => {
-    return axios.get(`${localAPIServer}/api/listings`);
+    return axios.get(`/api/listings`);
   },
 
   postListing: () => {
-    return axios.post(`${herokuUri}/api/listings`);
+    return axios.post(`/api/listings`);
   },
 
   // delete a listing by ID
@@ -19,15 +17,15 @@ const API = {
 
   // creates new user
   createUser: (userData) => {
-    return axios.post(`${localAPIServer}/api/users`, {data: userData});
+    return axios.post(`/api/users`, {data: userData});
   },
 
   login: (userData) => {
-    return axios.post(`${localAPIServer}/api/users/login`, {data: userData});
+    return axios.post(`/api/users/login`, {data: userData});
   },
 
   logout: () => {
-    return axios.post(`${localAPIServer}/api/users/logout`);
+    return axios.post(`/api/users/logout`);
   }
 };
 
