@@ -25,7 +25,7 @@ export const HostListingCard = (props) => {
       <div className={classes}>
         <div className="col-6 cardContainer">
           <div className="row">
-            <div className="col mt-3">
+            <div className="col my-3">
               <img
                 className="listingImage w-100"
                 src={
@@ -38,11 +38,14 @@ export const HostListingCard = (props) => {
               <p>Exotic Getaway in Houston</p>
               <p>6 guests - 4 bedrooms - 3 beds - 1 bath</p>
               <p>Wifi - Free parking - Pets - Smoking</p>
-            </div>
-            <div className="row">
-              <div className="col d-flex justify-content-center my-3">
+              <div className="col d-flex justify-content-center mt-5">
                 <a className="btn-warning" href="#">
                   Edit Listing
+                </a>
+              </div>
+              <div className="col d-flex justify-content-center mt-3">
+                <a className="btn-danger" href="#">
+                  Delete Listing
                 </a>
               </div>
             </div>
