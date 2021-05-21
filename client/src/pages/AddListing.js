@@ -4,6 +4,7 @@ import API from "../utils/API";
 export const AddListing = () => {
   const [listingForm, setListingForm] = useState({
     name: "",
+    description: "",
     zip: null,
     address: "",
     city: "",
@@ -21,6 +22,7 @@ export const AddListing = () => {
     wifi: "No",
     freeParking: "No",
   });
+  const [characterCount, setCharacterCount] = useState(0);
 
   const postListing = async (event) => {
     try {
@@ -43,7 +45,7 @@ export const AddListing = () => {
               <span className="input-group-text">Listing Name</span>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder='"The Getaway"'
                 onChange={({ target }) =>
                   setListingForm({ ...listingForm, name: target.value })
@@ -51,10 +53,24 @@ export const AddListing = () => {
               />
             </div>
             <div className="input-group mb-3">
+              <span className="input-group-text">
+                Quick Description <br /> {characterCount}/150
+              </span>
+              <textarea
+                onChange={({ target }) => {
+                  setListingForm({ ...listingForm, description: target.value });
+                  setCharacterCount(target.value.length)
+                }}
+                maxLength="150"
+                cols="50"
+              />
+            </div>
+
+            <div className="input-group mb-3">
               <span className="input-group-text">Street Address</span>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder="12345 Random Street Dr"
                 onChange={({ target }) =>
                   setListingForm({ ...listingForm, address: target.value })
@@ -78,7 +94,7 @@ export const AddListing = () => {
               <span className="input-group-text">City</span>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder="Houston"
                 onChange={({ target }) =>
                   setListingForm({ ...listingForm, city: target.value })
@@ -154,7 +170,7 @@ export const AddListing = () => {
               <span className="input-group-text">Type</span>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder="Apartment, Home, etc"
                 onChange={({ target }) =>
                   setListingForm({ ...listingForm, type: target.value })
