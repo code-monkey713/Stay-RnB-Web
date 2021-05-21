@@ -70,6 +70,12 @@ const ListingsSchema = new Schema({
   pictures: {
     type: Array,
   },
+  wifi: {
+    type: String,
+  },
+  freeParking: {
+    type: String
+  },
   reviews: [
     {
       type: Schema.Types.ObjectId,
