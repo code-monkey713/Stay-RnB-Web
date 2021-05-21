@@ -2,12 +2,12 @@ import axios from "axios";
 
 const API = {
   // get all listings
-  getListings: () => {
-    return axios.get(`/api/listings`);
+  getListings: (zip) => {
+    return axios.get(`/api/listings/:zip`, { params: { zip: zip } });
   },
 
   postListing: (listingData) => {
-    return axios.post(`/api/listings`, {data: listingData});
+    return axios.post(`/api/listings`, { data: listingData });
   },
 
   // delete a listing by ID
@@ -17,16 +17,16 @@ const API = {
 
   // creates new user
   createUser: (userData) => {
-    return axios.post(`/api/users`, {data: userData});
+    return axios.post(`/api/users`, { data: userData });
   },
 
   login: (userData) => {
-    return axios.post(`/api/users/login`, {data: userData});
+    return axios.post(`/api/users/login`, { data: userData });
   },
 
   logout: () => {
     return axios.post(`/api/users/logout`);
-  }
+  },
 };
 
 export default API;
