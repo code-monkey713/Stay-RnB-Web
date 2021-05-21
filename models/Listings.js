@@ -7,6 +7,9 @@ const ListingsSchema = new Schema({
     required: [true, `Please enter a name.`],
     trim: true,
   },
+  description: {
+    type: String,
+  },
   zip: {
     type: Number,
     required: [true, `Please enter a valid zip code.`],
