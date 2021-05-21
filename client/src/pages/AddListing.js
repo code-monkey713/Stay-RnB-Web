@@ -2,16 +2,6 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
 export const AddListing = () => {
-  const postListing = async (event) => {
-    try {
-      event.preventDefault();
-      const newListing = await API.postListing();
-      console.log(newListing);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const [listingForm, setListingForm] = useState({
     name: "",
     zip: null,
@@ -29,6 +19,16 @@ export const AddListing = () => {
     numberOfGuests: 1,
     thumbnail: "",
   });
+
+  const postListing = async (event) => {
+    try {
+      event.preventDefault();
+      const newListing = await API.postListing(listingForm);
+      console.log(newListing);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // useEffect(() => {
   //   console.log(listingForm);
@@ -160,6 +160,17 @@ export const AddListing = () => {
                 placeholder="Apartment, Home, etc"
                 onChange={({ target }) =>
                   setListingForm({ ...listingForm, type: target.value })
+                }
+              />
+            </div>
+            <div className="input-group mb-3">
+              <span className="input-group-text">Price/Night</span>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="100.00"
+                onChange={({ target }) =>
+                  setListingForm({ ...listingForm, price: target.value })
                 }
               />
             </div>
