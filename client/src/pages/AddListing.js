@@ -18,21 +18,19 @@ export const AddListing = () => {
     smoking: "No",
     numberOfGuests: 1,
     thumbnail: "",
+    wifi: "No",
+    freeParking: "No",
   });
 
   const postListing = async (event) => {
     try {
       event.preventDefault();
-      const newListing = await API.postListing(listingForm);
-      console.log(newListing);
+      await API.postListing(listingForm);
+      window.location.pathname = "/profile";
     } catch (err) {
       console.log(err);
     }
   };
-
-  // useEffect(() => {
-  //   console.log(listingForm);
-  // }, [listingForm]);
 
   return (
     <>
@@ -226,32 +224,6 @@ export const AddListing = () => {
               </select>
             </div>
             <div className="input-group mb-3">
-              <span className="input-group-text">Pets</span>
-              <select
-                name="pets"
-                id="pets"
-                onChange={({ target }) =>
-                  setListingForm({ ...listingForm, pets: target.value })
-                }
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-            </div>
-            <div className="input-group mb-3">
-              <span className="input-group-text">Smoking</span>
-              <select
-                name="smoking"
-                id="smoking"
-                onChange={({ target }) =>
-                  setListingForm({ ...listingForm, smoking: target.value })
-                }
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-            </div>
-            <div className="input-group mb-3">
               <span className="input-group-text">Number of Guests</span>
               <select
                 name="guests"
@@ -267,6 +239,66 @@ export const AddListing = () => {
                 <option value="5">5</option>
                 <option value="6">6</option>
               </select>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberCheck"
+                onClick={() => {
+                  listingForm.pets === "No"
+                    ? setListingForm({ ...listingForm, pets: "Yes" })
+                    : setListingForm({ ...listingForm, pets: "No" });
+                }}
+              />
+              <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
+                Pets
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberCheck"
+                onClick={() => {
+                  listingForm.smoking === "No"
+                    ? setListingForm({ ...listingForm, smoking: "Yes" })
+                    : setListingForm({ ...listingForm, smoking: "No" });
+                }}
+              />
+              <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
+                Smoking
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberCheck"
+                onClick={() => {
+                  listingForm.wifi === "No"
+                    ? setListingForm({ ...listingForm, wifi: "Yes" })
+                    : setListingForm({ ...listingForm, wifi: "No" });
+                }}
+              />
+              <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
+                Wifi
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberCheck"
+                onClick={() => {
+                  listingForm.freeParking === "No"
+                    ? setListingForm({ ...listingForm, freeParking: "Yes" })
+                    : setListingForm({ ...listingForm, freeParking: "No" });
+                }}
+              />
+              <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
+                Free Parking
+              </label>
             </div>
             <div className="row">
               <div className="col d-flex justify-content-center">
