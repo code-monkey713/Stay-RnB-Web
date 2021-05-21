@@ -1,13 +1,9 @@
-import { Home, Login, Signup } from "../pages";
-import { Outlet } from "react-router-dom";
-import { MainNavTabs } from "../components";
+import { MainNavTabs } from '../components';
 
 export const Main = () => {
   return (
     <>
-      <div className="layoutContainer">
-        <Outlet />
-      </div>
+      <div className="layoutContainer">{() => {}}</div>
       <MainNavTabs />
     </>
   );

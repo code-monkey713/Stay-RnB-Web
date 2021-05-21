@@ -1,5 +1,9 @@
 import './App.css';
-// import { Main } from './layout';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import { WelcomeNavTabs } from './components';
+
 import {
   Home,
   Listing,
@@ -7,30 +11,40 @@ import {
   Profile,
   Signup,
   RecoverPassword,
+  Logout,
 } from './pages';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import { Welcome, Main } from './layout';
 import { TitleBar } from './components';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="container-fluid">
-        <TitleBar />
-        <Routes>
-          <Route element={<Welcome />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Route>
-          <Route element={<Main />}>
-            <Route path="/listing" element={<Listing />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/recover" element={<RecoverPassword />} />
-          </Route>
-        </Routes>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: '100vh' }}
+    >
+      <TitleBar />
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route component={<Welcome />}>
+                <Route exact path="/" component={Home} />
+                <Route path="/login" component={Login} />
+                <Route path="/logout" component={Logout} />
+                <Route path="/signup" component={Signup} />
+                <WelcomeNavTabs />
+              </Route>
+              <Route component={<Main />}>
+                <Route path="/listing" component={<Listing />} />
+                <Route path="/profile" component={<Profile />} />
+                <Route path="/recover" component={<RecoverPassword />} />
+              </Route>
+            </Switch>
+          </AuthProvider>
+        </Router>
       </div>
-    </BrowserRouter>
+    </Container>
   );
 };
 
