@@ -51,7 +51,7 @@ export const Signup = () => {
               <label className="fs-4">First Name </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder="First Name"
                 onChange={({target}) => setSignupForm({...signupForm, firstName: target.value})}
               />
@@ -65,7 +65,7 @@ export const Signup = () => {
               <label className="fs-4">Last name</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-capitalize"
                 placeholder="Last Name"
                 onChange={({target}) => setSignupForm({...signupForm, lastName: target.value})}
               />
