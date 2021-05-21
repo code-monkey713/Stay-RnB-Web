@@ -4,4 +4,6 @@ export { Login } from './Login';
 export { Profile } from './Profile';
 export { Signup } from './Signup';
 export { RecoverPassword } from './RecoverPassword';
+export { ListingDetail } from './ListingDetail';
+export { Logout } from './Logout';
 
