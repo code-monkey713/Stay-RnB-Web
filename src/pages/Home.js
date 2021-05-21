@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { WelcomeNavTabs } from '../components';
 
 export const Home = () => {
   return (
@@ -32,6 +33,7 @@ export const Home = () => {
             />
           </Carousel.Item>
         </Carousel>
+        <WelcomeNavTabs />
       </div>
     </div>
   );
