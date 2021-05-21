@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export const ListingCard = ({ listings }) => {
-  console.log(listings);
   return (
     <div className="row d-flex justify-content-center my-3">
       <div className="col-6 cardContainer">
@@ -18,6 +17,7 @@ export const ListingCard = ({ listings }) => {
             <div className="row mb-5">
               <p>{listings.type}</p>
               <p>{listings.name}</p>
+              <p>{listings.description}</p>
               <p>
                 {listings.numberOfGuests}{" "}
                 {listings.numberOfGuests === 1 ? "Guest " : "Guests "}-{" "}
@@ -35,7 +35,7 @@ export const ListingCard = ({ listings }) => {
             </div>
             <div className="row">
               <div className="col d-flex justify-content-center">
-                <button className="btn btn-primary">View listing</button>
+                <button className="btn btn-primary" data-id={listings._id}>View listing</button>
               </div>
             </div>
           </div>
