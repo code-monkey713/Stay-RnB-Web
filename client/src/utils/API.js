@@ -6,8 +6,8 @@ const API = {
     return axios.get(`/api/listings`);
   },
 
-  postListing: () => {
-    return axios.post(`/api/listings`);
+  postListing: (listingData) => {
+    return axios.post(`/api/listings`, {data: listingData});
   },
 
   // delete a listing by ID
