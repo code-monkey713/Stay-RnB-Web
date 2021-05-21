@@ -18,7 +18,7 @@ export const Signup = () => {
     event.preventDefault();
     try {
       await API.createUser(signupForm);
-      window.location.pathname = '/listing'
+      !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
     } catch(err) {
       console.log(err);
     }
