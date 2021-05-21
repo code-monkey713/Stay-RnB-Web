@@ -12,11 +12,12 @@ export const Login = () => {
     try {
       const userData = {
         email: email,
-        password: password
+        password: password,
+        host: host,
       };
       await API.login(userData);
       console.log("successful login!")
-      // !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
+      !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
     } catch(err) {
       console.log(err)
     }
