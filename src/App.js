@@ -7,10 +7,11 @@ import {
   Profile,
   Signup,
   RecoverPassword,
-} from './pages';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Welcome, Main } from './layout';
-import { TitleBar } from './components';
+  AddListing,
+} from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Welcome, Main } from "./layout";
+import { TitleBar } from "./components";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           </Route>
           <Route element={<Main />}>
             <Route path="/listing" element={<Listing />} />
+            <Route path="/addlisting" element={<AddListing />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/recover" element={<RecoverPassword />} />
           </Route>

@@ -1,32 +1,32 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 export const Signup = () => {
-  const username = useRef("");
-  const firstName = useRef("");
-  const lastName = useRef("");
-  const emailAddress = useRef("");
-  const password = useRef("");
+  const [host,setHost] = useState(false);
+  const [signupForm,setSignupForm] = useState(
+    {
+      username: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    }
+  )
 
-  const submitFormHandler = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("add validation for data entered");
-
-    API.createUser({
-      username: username.current.value,
-      password: password.current.value,
-      firstName: firstName.current.value,
-      lastName: lastName.current.value,
-      email: emailAddress.current.value,
-    }).then(() => {
-      alert("The user has been created successfully!");
-    });
-  };
+    try {
+      await API.createUser(signupForm);
+      window.location.pathname = '/listing'
+    } catch(err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div>
-      <form onSubmit={submitFormHandler}>
+      <form>
         <h3 className="text-center mt-5 mb-3">
           New to Stay RnB? Please sign up:
         </h3>
@@ -39,7 +39,7 @@ export const Signup = () => {
                 type="text"
                 className="form-control"
                 placeholder="What username would you like to use?"
-                ref={username}
+                onChange={({target}) => setSignupForm({...signupForm, username: target.value})}
               />
             </div>
           </div>
@@ -53,7 +53,7 @@ export const Signup = () => {
                 type="text"
                 className="form-control"
                 placeholder="First Name"
-                ref={firstName}
+                onChange={({target}) => setSignupForm({...signupForm, firstName: target.value})}
               />
             </div>
           </div>
@@ -67,7 +67,7 @@ export const Signup = () => {
                 type="text"
                 className="form-control"
                 placeholder="Last Name"
-                ref={lastName}
+                onChange={({target}) => setSignupForm({...signupForm, lastName: target.value})}
               />
             </div>
           </div>
@@ -81,7 +81,7 @@ export const Signup = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter Email"
-                ref={emailAddress}
+                onChange={({target}) => setSignupForm({...signupForm, email: target.value})}
               />
             </div>
           </div>
@@ -95,15 +95,29 @@ export const Signup = () => {
                 type="password"
                 className="form-control"
                 placeholder="Enter Password"
-                ref={password}
+                onChange={({target}) => setSignupForm({...signupForm, password: target.value})}
               />
             </div>
           </div>
         </div>
 
+        <div className="row">
+          <div className="col form-check d-flex justify-content-center">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="hostSignUp"
+              onClick={() => !host ? setHost(true) : setHost(false)}
+            />
+            <label htmlFor="hostSignUp" className="mx-2 mb-2 fs-6">
+              Host Signup
+            </label>
+          </div>
+        </div>
+
         <div className="row mb-3">
           <div className="col d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary btn-block">
+            <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>
               Sign Up
             </button>
           </div>
@@ -112,7 +126,7 @@ export const Signup = () => {
 
       <div className="row">
         <div className="col d-flex justify-content-center">
-          <p className="forgot-password">
+          <p className="forgot-password fs-5">
             Already registered? Sign in<Link to="/login"> here.</Link>
           </p>
         </div>
