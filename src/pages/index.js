@@ -1,9 +1,9 @@
 export { Home } from './Home';
 export { Listing } from './Listing';
-export { Login } from './Login';
-export { Profile } from './Profile';
-export { Signup } from './Signup';
-export { RecoverPassword } from './RecoverPassword';
 export { ListingDetail } from './ListingDetail';
+export { Login } from './Login';
 export { Logout } from './Logout';
+export { Profile } from './Profile';
+export { RecoverPassword } from './RecoverPassword';
+export { Signup } from './Signup';
 
