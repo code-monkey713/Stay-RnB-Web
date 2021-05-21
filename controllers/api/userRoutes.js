@@ -24,11 +24,17 @@ router.post("/login", async (req, res) => {
       const userData = await db.User.findOne({
         email: req.body.data.email,
       }).select(`password email username`);
+      req.session.save(() => {
+        req.session.host = false;
+      });
       handleLogin(req, res, userData);
     } else {
       const userData = await db.Host.findOne({
         email: req.body.data.email,
       }).select(`password email username`);
+      req.session.save(() => {
+        req.session.host = true;
+      });
       handleLogin(req, res, userData);
     }
   } catch (err) {
@@ -47,6 +53,22 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+// Get user by id
+router.get("/", async (req,res) => {
+  try {
+    if (req.session.host === false) {
+      const getUser = await db.User.findById(req.session.userId);
+      res.status(200).json(getUser);
+    } else {
+      const getUser = await db.Host.findById(req.session.userId).populate('listings');
+      res.status(200).json(getUser);
+    }
+  } catch(err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 const handleLogin = (req, res, userData) => {
   if (!userData) {
