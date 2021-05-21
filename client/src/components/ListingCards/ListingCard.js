@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-export const ListingCard = (props) => {
+export const ListingCard = ({ listings }) => {
+  console.log(listings);
   return (
     <div className="row d-flex justify-content-center my-3">
       <div className="col-6 cardContainer">
@@ -15,10 +16,22 @@ export const ListingCard = (props) => {
           </div>
           <div className="col mx-3">
             <div className="row mb-5">
-              <p>Entire Home in Houston</p>
-              <p>Exotic Getaway in Houston</p>
-              <p>6 guests - 4 bedrooms - 3 beds - 1 bath</p>
-              <p>Wifi - Free parking - Pets - Smoking</p>
+              <p>{listings.type}</p>
+              <p>{listings.name}</p>
+              <p>
+                {listings.numberOfGuests}{" "}
+                {listings.numberOfGuests === 1 ? "Guest " : "Guests "}-{" "}
+                {listings.bedrooms}{" "}
+                {listings.bedrooms === 1 ? "Bedroom " : "Bedrooms "}-{" "}
+                {listings.beds} {listings.beds === 1 ? "Bed " : "Beds "}-{" "}
+                {listings.bathrooms}{" "}
+                {listings.bathrooms === 1 ? "Bath " : "Baths "}
+              </p>
+              <p>
+                Wifi: {listings.wifi} | Free parking: {listings.freeParking} |
+                Pets: {listings.pets} | Smoking: {listings.smoking}
+              </p>
+              <p>${listings.price}/Night</p>
             </div>
             <div className="row">
               <div className="col d-flex justify-content-center">
