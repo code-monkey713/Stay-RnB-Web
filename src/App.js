@@ -2,7 +2,9 @@ import './App.css';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
-import { WelcomeNavTabs } from './components';
+import { WelcomeNavTabs, TitleBar } from './components';
+import { Welcome } from './layout';
+import PrivateRoute from './components/PrivateRoute';
 
 import {
   Home,
@@ -13,9 +15,6 @@ import {
   RecoverPassword,
   Logout,
 } from './pages';
-// import { Routes, Route } from 'react-router-dom';
-import { Welcome, Main } from './layout';
-import { TitleBar } from './components';
 
 const App = () => {
   return (
@@ -33,12 +32,10 @@ const App = () => {
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/listing" component={Listing} />
+                <PrivateRoute path="/profile" component={Profile} />
+                <Route path="/recover" component={RecoverPassword} />
                 <WelcomeNavTabs />
-              </Route>
-              <Route component={<Main />}>
-                <Route path="/listing" component={<Listing />} />
-                <Route path="/profile" component={<Profile />} />
-                <Route path="/recover" component={<RecoverPassword />} />
               </Route>
             </Switch>
           </AuthProvider>
