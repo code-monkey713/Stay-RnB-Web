@@ -3,7 +3,8 @@ import Man from "../../assets/Man.jpg";
 import { HostListingCard } from "../../components/ListingCards/HostListingCard";
 import { Link } from "react-router-dom";
 
-export const HostProfile = () => {
+export const HostProfile = ({userInfo}) => {
+  console.log(userInfo)
   return (
     <>
       <div className="row profileContainer">
@@ -13,13 +14,9 @@ export const HostProfile = () => {
         <div className="col">
           <div className="row">
             <h1>Host Profile</h1>
-            <p className="fs-5">First Name: Foo</p>
-            <p className="fs-5">Last Name: Bar</p>
-            <p className="fs-5">Email Address: FooBar@email.com</p>
-            <p className="fs-5">Phone Number: 123-456-7890</p>
-            <p className="fs-5">
-              Address: 123 Random Guy Ln, Houston, Tx 77777
-            </p>
+            <p className="fs-5">First Name: {userInfo.firstName}</p>
+            <p className="fs-5">Last Name: {userInfo.lastName}</p>
+            <p className="fs-5">Email Address: {userInfo.email}</p>
             <p className="fs-5">Number of Listings: 3</p>
           </div>
           <div className="row">
