@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { ListingCard } from "../components/ListingCards";
+import API from '../utils/API';
 
 
 export const Listing = () => {
-  const [search, setSearch] = useState("");
+  const [zip, setZip] = useState(0);
+  const [listings, setListings] = useState([]);
 
-  const handleChange = ({ target }) => {
-    setSearch(target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const {data} = await API.getListings(zip);
+      setListings(data);
+    } catch(err) {
+      console.log(err)
+    }
   };
+
+  // useEffect(() => {
+  // },[zip])
 
   return (
     <>
@@ -27,7 +34,7 @@ export const Listing = () => {
             type="text"
             id="searchInput"
             placeholder="Enter your destination zip code"
-            onChange={handleChange}
+            onChange={({target}) => setZip(parseInt(target.value))}
           />
           <div className="input-group-append">
             <button
@@ -40,8 +47,9 @@ export const Listing = () => {
           </div>
         </div>
       </form>
-      <ListingCard />
-      <ListingCard />
+      {listings?.map(listing => (
+        <ListingCard listings={listing} />
+      ))}
     </>
   );
 };
