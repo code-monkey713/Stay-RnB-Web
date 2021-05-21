@@ -3,7 +3,7 @@ const logger = require(`morgan`);
 const mongoose = require(`mongoose`);
 const PORT = process.env.PORT || 3001;
 const routes = require(`./controllers`);
-const cors = require('cors');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 
@@ -13,9 +13,11 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI || `mongodb://localhost/Stay_RnB`,
+  })
 };
 
-app.use(cors());
 app.use(session(sess));
 app.use(logger(`dev`));
 app.use(express.urlencoded({ extended: true }));
