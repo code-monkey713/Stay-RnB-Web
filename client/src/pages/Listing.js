@@ -48,7 +48,7 @@ export const Listing = () => {
         </div>
       </form>
       {listings?.map(listing => (
-        <ListingCard listings={listing} />
+        <ListingCard key={listing._id} listings={listing} />
       ))}
     </>
   );
