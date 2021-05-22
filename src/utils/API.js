@@ -1,6 +1,6 @@
-import axios from "axios";
-const herokuUri = "https://stay-rnb-server.herokuapp.com";
-const localAPIServer = "http://localhost:3001";
+import axios from 'axios';
+const herokuUri = 'https://stay-rnb-server.herokuapp.com';
+const localAPIServer = 'http://localhost:3001';
 
 const API = {
   // get all listings
@@ -14,21 +14,21 @@ const API = {
 
   // delete a listing by ID
   deleteListing: (id) => {
-    return axios.delete("/:id" + id);
+    return axios.delete('/:id' + id);
   },
 
   // creates new user
   createUser: (userData) => {
-    return axios.post(`${localAPIServer}/api/users`, {data: userData});
+    return axios.post(`${localAPIServer}/api/users`, { data: userData });
   },
 
   login: (userData) => {
-    return axios.post(`${localAPIServer}/api/users/login`, {data: userData});
+    return axios.post(`${localAPIServer}/api/users/login`, { data: userData });
   },
 
   logout: () => {
     return axios.post(`${localAPIServer}/api/users/logout`);
-  }
+  },
 };
 
 export default API;

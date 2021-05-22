@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
-import { ListingCard } from "../components/ListingCards";
-
+import { ListingCard } from '../components/ListingCards';
 
 export const Listing = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleChange = ({ target }) => {
     setSearch(target.value);

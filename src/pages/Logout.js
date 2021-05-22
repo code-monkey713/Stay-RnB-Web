@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const Logout = () => {
-  return (
-    <div>
-      This is the logout page!
-    </div>
-  )
-}
+  return <div>This is the logout page!</div>;
+};

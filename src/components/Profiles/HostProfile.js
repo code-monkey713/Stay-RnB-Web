@@ -1,7 +1,7 @@
-import React from "react";
-import Man from "../../assets/Man.jpg";
-import { HostListingCard } from "../../components/ListingCards/HostListingCard";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Man from '../../assets/Man.jpg';
+import { HostListingCard } from '../../components/ListingCards/HostListingCard';
+import { Link } from 'react-router-dom';
 
 export const HostProfile = () => {
   return (

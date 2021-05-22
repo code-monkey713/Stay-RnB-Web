@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { WelcomeNavTabs, TitleBar } from './components';
-import { Welcome } from './layout';
 import PrivateRoute from './components/PrivateRoute';
 
 import {
