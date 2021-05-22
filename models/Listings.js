@@ -85,9 +85,9 @@ const ListingsSchema = new Schema({
       ref: "Reviews",
     },
   ],
-  user: {
+  host: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Host",
   }
 });
 
