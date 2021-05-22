@@ -27,14 +27,28 @@ const App = () => {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route component={<Welcome />}>
-                <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/logout" component={Logout} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/listing" component={Listing} />
-                <PrivateRoute path="/profile" component={Profile} />
-                <Route path="/recover" component={RecoverPassword} />
+              <Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/logout">
+                  <Logout />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route path="/listing">
+                  <Listing />
+                </Route>
+                <PrivateRoute path="/profile">
+                  <Profile />
+                </PrivateRoute>
+                <Route path="/recover">
+                  <RecoverPassword />
+                </Route>
                 <WelcomeNavTabs />
               </Route>
             </Switch>
