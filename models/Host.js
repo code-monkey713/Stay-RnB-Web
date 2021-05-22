@@ -36,6 +36,10 @@ const HostSchema = new Schema({
   numberOfListings: {
     type: Number,
   },
+  host: {
+    type: Boolean,
+    default: true,
+  },
   listings: [
     {
       type: Schema.Types.ObjectId,
