@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 export const Signup = () => {
-  const [host,setHost] = useState(false);
-  const [signupForm,setSignupForm] = useState(
-    {
-      username: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    }
-  )
+  const [signupForm, setSignupForm] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    hostLogin: false,
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await API.createUser(signupForm);
-      !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
-    } catch(err) {
+      !signupForm.hostLogin
+        ? (window.location.pathname = "/listing")
+        : (window.location.pathname = "/profile");
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <div>
@@ -39,7 +39,9 @@ export const Signup = () => {
                 type="text"
                 className="form-control"
                 placeholder="What username would you like to use?"
-                onChange={({target}) => setSignupForm({...signupForm, username: target.value})}
+                onChange={({ target }) =>
+                  setSignupForm({ ...signupForm, username: target.value })
+                }
               />
             </div>
           </div>
@@ -53,7 +55,9 @@ export const Signup = () => {
                 type="text"
                 className="form-control text-capitalize"
                 placeholder="First Name"
-                onChange={({target}) => setSignupForm({...signupForm, firstName: target.value})}
+                onChange={({ target }) =>
+                  setSignupForm({ ...signupForm, firstName: target.value })
+                }
               />
             </div>
           </div>
@@ -67,7 +71,9 @@ export const Signup = () => {
                 type="text"
                 className="form-control text-capitalize"
                 placeholder="Last Name"
-                onChange={({target}) => setSignupForm({...signupForm, lastName: target.value})}
+                onChange={({ target }) =>
+                  setSignupForm({ ...signupForm, lastName: target.value })
+                }
               />
             </div>
           </div>
@@ -81,7 +87,9 @@ export const Signup = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter Email"
-                onChange={({target}) => setSignupForm({...signupForm, email: target.value})}
+                onChange={({ target }) =>
+                  setSignupForm({ ...signupForm, email: target.value })
+                }
               />
             </div>
           </div>
@@ -95,7 +103,9 @@ export const Signup = () => {
                 type="password"
                 className="form-control"
                 placeholder="Enter Password"
-                onChange={({target}) => setSignupForm({...signupForm, password: target.value})}
+                onChange={({ target }) =>
+                  setSignupForm({ ...signupForm, password: target.value })
+                }
               />
             </div>
           </div>
@@ -107,7 +117,11 @@ export const Signup = () => {
               type="checkbox"
               className="form-check-input"
               id="hostSignUp"
-              onClick={() => !host ? setHost(true) : setHost(false)}
+              onClick={() =>
+                !signupForm.hostLogin
+                  ? setSignupForm({ ...signupForm, hostLogin: true })
+                  : setSignupForm({ ...signupForm, hostLogin: false })
+              }
             />
             <label htmlFor="hostSignUp" className="mx-2 mb-2 fs-6">
               Host Signup
@@ -117,7 +131,11 @@ export const Signup = () => {
 
         <div className="row mb-3">
           <div className="col d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>
+            <button
+              type="submit"
+              className="btn btn-primary btn-block"
+              onClick={handleSubmit}
+            >
               Sign Up
             </button>
           </div>
