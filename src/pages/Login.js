@@ -18,7 +18,7 @@ export const Login = () => {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      
+
       history.push('/profile');
     } catch {
       setError('Failed to log in');

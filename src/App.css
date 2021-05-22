@@ -1,5 +1,5 @@
 * {
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   color: #284b63;
   font-weight: bold;
 }
@@ -78,17 +78,8 @@ code {
   background-color: white;
 }
 
-.carouselContainer {
-}
-
-.profileContainer {
-}
-
 .layoutContainer {
   margin-top: 100px;
-}
-
-.titleContainer {
 }
 
 .cardContainer {

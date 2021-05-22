@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export const HostListingCard = (props) => {
   const [classes, setClasses] = useState(
-    "row mb-3 d-flex justify-content-center d-none"
+    'row mb-3 d-flex justify-content-center d-none'
   );
 
   const ToggleDisplay = () => {
-    if (classes === "row mb-3 d-flex justify-content-center d-none") {
-      setClasses("row mb-3 d-flex justify-content-center");
+    if (classes === 'row mb-3 d-flex justify-content-center d-none') {
+      setClasses('row mb-3 d-flex justify-content-center');
     } else {
-      setClasses("row mb-3 d-flex justify-content-center d-none");
+      setClasses('row mb-3 d-flex justify-content-center d-none');
     }
   };
 
@@ -29,7 +29,7 @@ export const HostListingCard = (props) => {
               <img
                 className="listingImage w-100"
                 src={
-                  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                  'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'
                 }
               />
             </div>

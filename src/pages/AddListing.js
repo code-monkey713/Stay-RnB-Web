@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+import React, { useState, useEffect } from 'react';
+import API from '../utils/API';
 
 export const AddListing = () => {
   const postListing = async (event) => {
@@ -13,26 +13,22 @@ export const AddListing = () => {
   };
 
   const [listingForm, setListingForm] = useState({
-    name: "",
+    name: '',
     zip: null,
-    address: "",
-    city: "",
-    state: "",
+    address: '',
+    city: '',
+    state: '',
     available: true,
-    type: "",
+    type: '',
     price: null,
     bedrooms: 1,
     beds: 1,
     bathrooms: 1,
-    pets: "No",
-    smoking: "No",
+    pets: 'No',
+    smoking: 'No',
     numberOfGuests: 1,
-    thumbnail: "",
+    thumbnail: '',
   });
-
-  // useEffect(() => {
-  //   console.log(listingForm);
-  // }, [listingForm]);
 
   return (
     <>
