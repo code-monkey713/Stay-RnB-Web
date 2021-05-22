@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 export const Login = () => {
-  const [host, setHost] = useState(false);
+  const [hostLogin, setHost] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,11 +13,11 @@ export const Login = () => {
       const userData = {
         email: email,
         password: password,
-        host: host,
+        hostLogin: hostLogin,
       };
       await API.login(userData);
       console.log("successful login!")
-      !host ? window.location.pathname = 'listing' : window.location.pathname = 'profile'
+      !hostLogin ? window.location.pathname = '/listing' : window.location.pathname = '/profile'
     } catch(err) {
       console.log(err)
     }
@@ -84,7 +84,7 @@ export const Login = () => {
               type="checkbox"
               className="form-check-input"
               id="hostLogin"
-              onClick={() => (!host ? setHost(true) : setHost(false))}
+              onClick={() => (!hostLogin ? setHost(true) : setHost(false))}
             />
             <label htmlFor="hostLogin" className="mx-2 mb-2 fs-6">
               Host Login
