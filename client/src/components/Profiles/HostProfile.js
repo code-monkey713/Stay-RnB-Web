@@ -14,8 +14,8 @@ export const HostProfile = ({userInfo}) => {
         <div className="col">
           <div className="row">
             <h1>Host Profile</h1>
-            <p className="fs-5">First Name: {userInfo.firstName}</p>
-            <p className="fs-5">Last Name: {userInfo.lastName}</p>
+            <p className="fs-5 text-capitalize">First Name: {userInfo.firstName}</p>
+            <p className="fs-5 text-capitalize">Last Name: {userInfo.lastName}</p>
             <p className="fs-5">Email Address: {userInfo.email}</p>
             <p className="fs-5">Number of Listings: 3</p>
           </div>
