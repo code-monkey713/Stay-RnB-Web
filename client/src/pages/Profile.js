@@ -9,15 +9,24 @@ export const Profile = () => {
   useEffect(async () => {
     const { data } = await API.getUser();
     setUserInfo(data);
+    console.log(data);
   }, []);
 
-  if (Object.entries(userInfo).length > 0) {
-    return (
-      <div>
-        <HostProfile userInfo={userInfo} />
-        {/* <UserProfile /> */}
-      </div>
-    );
+
+  if (userInfo) {
+    if (userInfo.host) {
+      return (
+        <div>
+          <HostProfile userInfo={userInfo} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <UserProfile userInfo={userInfo}/>
+        </div>
+      );
+    }
   } else {
     return null;
   }
