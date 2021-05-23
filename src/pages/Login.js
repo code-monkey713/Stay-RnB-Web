@@ -1,71 +1,59 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from 'react';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useHistory } from 'react-router-dom';
 
 export const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError('');
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+
+      history.push('/profile');
+    } catch {
+      setError('Failed to log in');
+    }
+
+    setLoading(false);
+  }
+
   return (
-    <div>
-      <form>
-        <h2 className="text-center mt-5 mb-3">Already a user? Sign In!</h2>
-
-        <div className="form-group row mb-3">
-          <div className="col-6 m-auto">
-            <label className="fs-4">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-            />
+    <>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">Log In</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group id="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" ref={emailRef} required />
+            </Form.Group>
+            <Form.Group id="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" ref={passwordRef} required />
+            </Form.Group>
+            <Button disabled={loading} className="w-100" type="submit">
+              Log In
+            </Button>
+          </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/recover">Forgot Password?</Link>
           </div>
-        </div>
-
-        <div className="form-group row mb-3">
-          <div className="col-6 m-auto">
-            <label className="fs-4">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-            />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col form-check d-flex justify-content-center">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              value=""
-              id="rememberCheck"
-            />
-            <label htmlFor="rememberCheck" className="mx-2 mb-2 fs-6">
-              Remember me
-            </label>
-          </div>
-        </div>
-
-        <div className="row mb-3">
-          <div className="col d-flex justify-content-center">
-            <button type="submit" className="btn btn-primary btn-block">
-              Submit
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <div className="row">
-        <div className="col d-flex justify-content-center">
-          <p className="forgot-password fs-5">
-            Forgot <Link to="/recover"> password?</Link>
-          </p>
-        </div>
+        </Card.Body>
+      </Card>
+      <div className="w-100 text-center mt-2">
+        Need an account? <Link to="/signup">Sign Up</Link>
       </div>
-      <div className="row">
-        <div className="col d-flex justify-content-center">
-          <p className="forgot-password fs-5">
-            Not a user yet? Sign up <Link to="/signup">here.</Link>
-          </p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };

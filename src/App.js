@@ -1,5 +1,10 @@
-import "./App.css";
-// import { Main } from './layout';
+import './App.css';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import { WelcomeNavTabs, TitleBar } from './components';
+import PrivateRoute from './components/PrivateRoute';
+
 import {
   Home,
   Listing,
@@ -7,30 +12,49 @@ import {
   Profile,
   Signup,
   RecoverPassword,
-} from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Welcome, Main}  from "./layout";
-import { TitleBar } from './components'
+  Logout,
+} from './pages';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="container-fluid">
-        <TitleBar />
-        <Routes>
-          <Route element={<Welcome />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Route>
-          <Route element={<Main />}>
-            <Route path="/listing" element={<Listing />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/recover" element={<RecoverPassword />} />
-          </Route>
-        </Routes>
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: '100vh' }}
+    >
+      <TitleBar />
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/logout">
+                  <Logout />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route path="/listing">
+                  <Listing />
+                </Route>
+                <PrivateRoute path="/profile">
+                  <Profile />
+                </PrivateRoute>
+                <Route path="/recover">
+                  <RecoverPassword />
+                </Route>
+                <WelcomeNavTabs />
+              </Route>
+            </Switch>
+          </AuthProvider>
+        </Router>
       </div>
-    </BrowserRouter>
+    </Container>
   );
 };
 
